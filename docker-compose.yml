@@ -1,0 +1,26 @@
+version: '3.8'
+
+# Define services for backend and frontend
+services:
+  backend:
+    image: <ник>/backend:latest # Replace <ник> with your Docker Hub username
+    container_name: backend_container
+    restart: always
+    networks:
+      - app_network
+    ports:
+      - "5000:5000" # Map backend service to port 5000
+
+  frontend:
+    image: <ник>/frontend:latest # Replace <ник> with your Docker Hub username
+    container_name: frontend_container
+    restart: always
+    networks:
+      - app_network
+    ports:
+      - "80:80" # Map frontend service to port 80
+
+# Define a shared network for communication between services
+networks:
+  app_network:
+    driver: bridge

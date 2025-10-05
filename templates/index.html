@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Post Generator</title>
+</head>
+<body>
+    <h1>Social Post Generator</h1>
+    <form method="POST">
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required>
+        <br>
+        <label for="style">Style:</label>
+        <select id="style" name="style">
+            <option value="ироничный">Ироничный</option>
+            <option value="серьезный">Серьезный</option>
+            <option value="дружелюбный">Дружелюбный</option>
+        </select>
+        <br>
+        <button type="submit">Generate Post</button>
+    </form>
+
+    {% if post %}
+        <h2>Generated Post:</h2>
+        <p>{{ post }}</p>
+    {% endif %}
+</body>
+</html>

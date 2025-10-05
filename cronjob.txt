@@ -1,0 +1,2 @@
+# Run the update-containers.sh script every hour
+0 * * * * /bin/bash /path/to/update-containers.sh >> /path/to/update-log.txt 2>&1
